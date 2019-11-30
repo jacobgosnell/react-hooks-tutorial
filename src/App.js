@@ -27,7 +27,7 @@ const [name, setName] = useState('');
 };
 
 const formSubmit = (value, setValue) => {
-  console.log('email sent to ' + value + '!');
+  console.log('email sent to' + value + '!');
   setValue('');
 }
 
