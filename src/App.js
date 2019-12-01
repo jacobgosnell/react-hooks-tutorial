@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Toggle from './Toggle';
 
 const App = () => {
 
   // const [value, setValue] = useState(initialState); 
 const [name, setName] = useState('');
+
+useEffect(() => {
+  document.title = name;
+})
 
   return (
     <div className="main-wrapper">
@@ -13,7 +17,6 @@ const [name, setName] = useState('');
       <form onSubmit={e => {
         // prevents form from refreshing page
         e.preventDefault();
-        formSubmit(name, setName);
       }}>
         <input 
           type="text"
@@ -28,9 +31,6 @@ const [name, setName] = useState('');
 };
 
 // you can use name and setName like other variables
-const formSubmit = (value, setValue) => {
-  console.log('email sent to' + value + '!');
-  setValue('');
-}
+
 
 export default App;
