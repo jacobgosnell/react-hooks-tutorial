@@ -11,6 +11,7 @@ const [name, setName] = useState('');
       <h1>Level Up Dishes</h1>
       <Toggle />
       <form onSubmit={e => {
+        // prevents form from refreshing page
         e.preventDefault();
         formSubmit(name, setName);
       }}>
@@ -26,6 +27,7 @@ const [name, setName] = useState('');
   );
 };
 
+// you can use name and setName like other variables
 const formSubmit = (value, setValue) => {
   console.log('email sent to' + value + '!');
   setValue('');
