@@ -1,11 +1,8 @@
-import React, { useState, useContext } from 'react';
-import { UserContext } from './App';
+import React, { useState } from 'react';
 
 const Toggle = () => {
   const [ isToggled, setToggle ] = useState(false);
-  const userInfo = useContext(UserContext);
-  console.log('userInfo:', userInfo);
-  if(!userInfo.user) return null;
+
   return (
     <div>
       <button onClick={() => setToggle(!isToggled)}>Click Me!</button>
