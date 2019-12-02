@@ -10,4 +10,4 @@ function useTitleInput(initialValue) {
   return [value, setValue];
 }
 
-export{ useTitleInput };
+export{ useTitleInput }; 

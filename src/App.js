@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Toggle from './Toggle';
 
 // methods
@@ -6,10 +6,12 @@ import { useTitleInput }  from './hooks/useTitleInput';
 
 const App = () => {
   const [name, setName] = useTitleInput('');
+  const ref = useRef();
+  console.log('ref:', ref.current);
 
   return (
-    <div className="main-wrapper">
-      <h1>Level Up Dishes</h1>
+    <div className="main-wrapper" ref={ref}>
+      <h1 onClick={() => console.log(ref.current.classList.add('new-fake-class'))}>Level Up Dishes</h1>
       <Toggle />
       <form onSubmit={e => {
         // prevents form from refreshing page
